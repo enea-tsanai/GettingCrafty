@@ -34,7 +34,7 @@ public class splashscreen extends Activity {
                 startActivity(i);
 
 
-                //jeda selesai Splashscreen
+                // Splashscreen
                 this.finish();
             }
 
