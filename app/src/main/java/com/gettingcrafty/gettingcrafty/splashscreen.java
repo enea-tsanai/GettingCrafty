@@ -12,7 +12,8 @@ import android.view.WindowManager;
 
 public class splashscreen extends Activity {
 
-    //Set waktu lama splashscreen
+    //This is loading screen.
+    //No Fxxking change
     private static int splashInterval = 2000;
 
     @Override
