@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +13,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this, "GJdJFRnO0LyRV2DzlpAg9E3fxvYw05fvDfBEWWj5", "t9uGl3CUyp0q6Eu5GYovr2stN0EIlx3bSajAnu6V");
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
     }
 
     @Override
