@@ -1,16 +1,10 @@
     package com.gettingcrafty.gettingcrafty;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.facebook.CallbackManager;
@@ -34,7 +28,7 @@ public class LoginPage extends AppCompatActivity {
 
         // Set Content View
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login_page);
 
 
         info = (TextView)findViewById(R.id.info);
@@ -44,13 +38,17 @@ public class LoginPage extends AppCompatActivity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Log.i("Login:  ", loginResult.toString());
-                Log.i("User:  ", loginResult.getAccessToken().getUserId().toString());
 
-                // App code
-                info.setText("User ID: " + loginResult.getAccessToken().getUserId() + "\n" +
-                        "Auth Token: " + loginResult.getAccessToken().getToken()
-                );
+                Intent intent = new Intent(LoginPage.this, MainPage.class);
+                startActivity(intent);
+
+//                Log.i("Login:  ", loginResult.toString());
+//                Log.i("User:  ", loginResult.getAccessToken().getUserId().toString());
+//
+//                // App code
+//                info.setText("User ID: " + loginResult.getAccessToken().getUserId() + "\n" +
+//                        "Auth Token: " + loginResult.getAccessToken().getToken()
+//                );
             }
 
             @Override
