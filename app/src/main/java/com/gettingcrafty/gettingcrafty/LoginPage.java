@@ -1,4 +1,4 @@
-package com.gettingcrafty.gettingcrafty;
+    package com.gettingcrafty.gettingcrafty;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
@@ -21,7 +21,7 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.facebook.FacebookSdk;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginPage extends AppCompatActivity {
     CallbackManager callbackManager;
     private TextView info;
 
